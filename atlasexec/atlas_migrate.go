@@ -495,7 +495,7 @@ func (c *Client) MigrateSet(ctx context.Context, params *MigrateSetParams) error
 // MigrateDiff runs the 'migrate diff --dry-run' command and returns the generated migration files without changing the filesystem.
 // Requires atlas CLI to be logged in to the cloud.
 func (c *Client) MigrateDiff(ctx context.Context, params *MigrateDiffParams) (*MigrateDiff, error) {
-	args := []string{"migrate", "diff", "--dry-run"}
+	args := []string{"migrate", "diff"}
 	if params.Env != "" {
 		args = append(args, "--env", params.Env)
 	}
